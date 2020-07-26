@@ -38,7 +38,7 @@ func execute(cmd *cobra.Command, args []string) (err error) {
 		fmt.Printf("%s: %s\n", color.YellowString("Command"), command)
 	}
 	// Adds command to zsh history
-	run(fmt.Sprintf("print -s %s", command))
+	run(fmt.Sprintf("print -s %s", command), os.Stdin, os.Stdout)
 	return run(command, os.Stdin, os.Stdout)
 }
 
